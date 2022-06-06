@@ -110,3 +110,7 @@ export chezmoi=/usr/bin/chezmoi
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+if ps -p $SSH_AGENT_PID > /dev/null; then
+  eval $(keychain --eval --agents ssh id_ed25519)
+fi
