@@ -86,11 +86,11 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
-nmap <silent> [p <Plug>(coc-diagnostic-prev)
-nmap <silent> ]n <Plug>(coc-diagnostic-next)
+nmap <silent> cp <Plug>(coc-diagnostic-prev)
+nmap <silent> cn <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
 nnoremap <silent> K :call CocAction('doHover')<CR>
-nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>cw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " Bufftabline
 nnoremap <C-n> :bnext<CR>
