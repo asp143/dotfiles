@@ -141,14 +141,23 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+
+set $monitor_left HDMI-0
+set $monitor_right DVI-D-0
+
+workspace $ws2 output $monitor_right
+
+workspace $ws6 output $monitor_left
+workspace $ws7 output $monitor_left
+workspace $ws8 output $monitor_left
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -186,8 +195,11 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Skype"] $ws5
 assign [class="Google-chrome"] $ws1
 assign [class="Brave-browser"] $ws1
-assign [class="discord"] $ws2
-assign [class="Pcmanfm"] $ws3
+assign [class="Terminator"] $ws2
+assign [class="discord"] $ws6
+assign [class="Pcmanfm"] $ws6
+assign [class="Postman"] $ws7
+assign [class="Mysql-workbench-bin"] $ws7
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -217,6 +229,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="Spotify"] move to workspace $ws6
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -270,13 +283,25 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+mode "move_workspace" {
+ bindsym Up move workspace to output up
+ bindsym Down move workspace to output down
+ bindsym Left move workspace to output left
+ bindsym Right move workspace to output right
 
+ bindsym Escape mode "default"
+}
+
+bindsym $mod+o mode "move_workspace"
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
+#Dual monitor
+exec_always --no-startup-id ~/.screenlayout/.layout.sh
+
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -292,6 +317,7 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+
 
 # Color palette used for the terminator ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
