@@ -109,11 +109,12 @@ export BROWSER=/usr/bin/google-chrome-stable
 export chezmoi=/usr/bin/chezmoi
 
 #This will auto start tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
-
-if ps -p $SSH_AGENT_PID > /dev/null; then
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#  exec tmux
+#fi
+if [ $(ps ax | grep [s]sh-agent | wc -l) -gt 0 ] ; then
+  echo "SSH running"
+else
   eval $(keychain --eval --agents ssh id_ed25519)
 fi
 
@@ -126,3 +127,11 @@ if [ -f '/home/ralph/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
 alias vim="nvim"
+
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
+export DENO_INSTALL="/home/ralph/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

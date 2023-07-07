@@ -306,7 +306,7 @@ assign [class="Mysql-workbench-bin"] $ws7
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
-
+for_window [class="^.*"] border pixel 1
 ##############
 # compositor #
 ##############

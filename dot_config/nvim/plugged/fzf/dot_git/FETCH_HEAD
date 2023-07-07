@@ -1,5 +1,0 @@
-70529878e20cf0367ca25b0aa9dbf1f51062f5e0		branch 'master' of https://github.com/junegunn/fzf
-213b6271ad354a41a5a8fc7b14486d20ad15a925	not-for-merge	branch 'dependabot/github_actions/actions/setup-go-3.2.0' of https://github.com/junegunn/fzf
-f58aaa83ebfba84adf44dd39617e8a9eac948dd7	not-for-merge	branch 'dependabot/github_actions/github/codeql-action-2.1.12' of https://github.com/junegunn/fzf
-abfccd4d2ab7e07ba34f1152d16c0d6720fe9acf	not-for-merge	branch 'dependabot/github_actions/ruby/setup-ruby-1.110.0' of https://github.com/junegunn/fzf
-e3f6b7d30c63918f72de221f829a622d482d7efb	not-for-merge	branch 'devel' of https://github.com/junegunn/fzf

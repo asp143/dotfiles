@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 72095ac4b96f4bef3809cafcaeddcaad074f7bcf Ralph <ralph@ralph.(none)> 1654317597 +0800	clone: from https://github.com/neoclide/coc.nvim.git
-72095ac4b96f4bef3809cafcaeddcaad074f7bcf 102fe82be44e878d6eefdab2cb2fc4aaa5a346f3 Ralph <ralph@ralph.(none)> 1654317598 +0800	checkout: moving from master to release
-102fe82be44e878d6eefdab2cb2fc4aaa5a346f3 102fe82be44e878d6eefdab2cb2fc4aaa5a346f3 Ralph <ralph@ralph.(none)> 1655256846 +0800	checkout: moving from release to release
-102fe82be44e878d6eefdab2cb2fc4aaa5a346f3 87e5dd692ec8ed7be25b15449fd0ab15a48bfb30 Ralph <ralph@ralph.(none)> 1655256846 +0800	merge origin/release: Fast-forward
-87e5dd692ec8ed7be25b15449fd0ab15a48bfb30 87e5dd692ec8ed7be25b15449fd0ab15a48bfb30 Ralph <ralph@ralph.(none)> 1655474547 +0800	checkout: moving from release to release
-87e5dd692ec8ed7be25b15449fd0ab15a48bfb30 87e5dd692ec8ed7be25b15449fd0ab15a48bfb30 Ralph <ralph@ralph.(none)> 1655646656 +0800	checkout: moving from release to release

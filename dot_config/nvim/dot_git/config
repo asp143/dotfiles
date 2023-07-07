@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:asp143/nvim.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[branch "update/mac"]
+	remote = origin
+	merge = refs/heads/update/mac
+[user]
+	email = ralph@symph.co
+	name = Ralph
